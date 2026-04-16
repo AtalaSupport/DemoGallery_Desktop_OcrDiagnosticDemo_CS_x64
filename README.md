@@ -3,7 +3,7 @@ The purpose of this demo is to show what the OCR engine recognizes in a document
 
 This program is useful for diagnosing OCR, comparing results with different engines, and to demonstrate some more advanced features using the OcrDocument class, which can be used to traverse a recognized page. 
 
-This is the C# version. We have a [VB.NET version](https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_VB_x86) available.
+This is the C# version. We have a [VB.NET version](https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_VB_x64) available.
 
 
 ## Licensing
@@ -62,7 +62,7 @@ Still, if you wish to use NuGet for the dependencies instead of relying on local
 
 
 ## Downloading source
-The sources can be downloaded for [c#](https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_CS_x86/archive/refs/heads/main.zip) and [VB.NET](https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_VB_x86/archive/refs/heads/main.zip)
+The sources can be downloaded for [c#](https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_CS_x64/archive/refs/heads/main.zip) and [VB.NET](https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_VB_x64/archive/refs/heads/main.zip)
 
 
 ## Cloning
@@ -70,7 +70,7 @@ We recommend the following to ensure you clone with the required submodule
 
 Example: git for windows
 ```bash
-git clone https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_CS_x86.git OcrDiagnosticDemo
+git clone https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_CS_x64.git OcrDiagnosticDemo
 ```
 
 

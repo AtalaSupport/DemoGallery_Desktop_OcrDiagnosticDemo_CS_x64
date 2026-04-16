@@ -4,6 +4,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcrDiagnostic", "OcrDiagnostic\OcrDiagnostic.csproj", "{A0F32457-1622-4FBE-94AC-AE25A5A54114}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinDemoHelperMethods", "WinDemoHelperMethods\WinDemoHelperMethods.csproj", "{5ABEB07A-C0B6-4B17-89A7-23761594015A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -14,6 +16,10 @@ Global
 		{A0F32457-1622-4FBE-94AC-AE25A5A54114}.Debug|x64.Build.0 = Debug|x64
 		{A0F32457-1622-4FBE-94AC-AE25A5A54114}.Release|x64.ActiveCfg = Release|x64
 		{A0F32457-1622-4FBE-94AC-AE25A5A54114}.Release|x64.Build.0 = Release|x64
+		{5ABEB07A-C0B6-4B17-89A7-23761594015A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5ABEB07A-C0B6-4B17-89A7-23761594015A}.Debug|x64.Build.0 = Debug|Any CPU
+		{5ABEB07A-C0B6-4B17-89A7-23761594015A}.Release|x64.ActiveCfg = Release|Any CPU
+		{5ABEB07A-C0B6-4B17-89A7-23761594015A}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

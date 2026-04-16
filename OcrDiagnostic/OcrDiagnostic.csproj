@@ -117,10 +117,6 @@
       <Name>Atalasoft.dotImage.Ocr.OmniPage</Name>
       <HintPath>C:\Program Files (x86)\Atalasoft\DotImage 2026.2\bin\4.6.2\x64\Atalasoft.dotImage.Ocr.OmniPage.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Ocr.Tesseract3">
-      <Name>Atalasoft.dotImage.Ocr.Tesseract3</Name>
-      <HintPath>C:\Program Files (x86)\Atalasoft\DotImage 2026.2\bin\4.6.2\x64\Atalasoft.dotImage.Ocr.Tesseract3.dll</HintPath>
-    </Reference>
     <Reference Include="Atalasoft.dotImage.Ocr.Tesseract5, Version=11.4.0.377, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Atalasoft\DotImage 2026.2\bin\4.6.2\x64\Atalasoft.dotImage.Ocr.Tesseract5.dll</HintPath>
@@ -187,7 +183,6 @@
     <Compile Include="ResolutionFontBuilder.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WinDemoHelperMethods.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -234,6 +229,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinDemoHelperMethods\WinDemoHelperMethods.csproj">
+      <Project>{5abeb07a-c0b6-4b17-89a7-23761594015a}</Project>
+      <Name>WinDemoHelperMethods</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

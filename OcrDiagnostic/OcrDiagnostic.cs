@@ -15,6 +15,7 @@ using Atalasoft.Ocr.Tesseract;
 using System.Globalization;
 using Atalasoft.Imaging.Codec;
 using Atalasoft.Ocr.OmniPage;
+using WinDemoHelperMethods;
 
 
 namespace OcrDiagnostic
@@ -59,7 +60,6 @@ namespace OcrDiagnostic
 		private GlyphReaderEngine _glyphReaderEngine;
         private OmniPageLoader _omniPageLoader;
         private OmniPageEngine _omniPageEngine;
-        private Tesseract3Engine _tesseract3Engine;  // added for tesseract3 support
         private Tesseract5Engine _tesseract5Engine;  // added for tesseract5 support
         private OcrEngine _engine;                      // current active engine, if any
 
@@ -91,7 +91,6 @@ namespace OcrDiagnostic
         private bool _validLicense;
         private bool _hasEV = false;
         private bool _hasGR = false;
-        private MenuItem menuTesseract3;
         private MenuItem menuTesseract5;
         private bool _hasOmniPage = false;
 
@@ -99,7 +98,7 @@ namespace OcrDiagnostic
 		{
 			CheckLicenseFile();
 
-            AtalaDemos.HelperMethods.PopulateDecoders(RegisteredDecoders.Decoders);
+            HelperMethods.PopulateDecoders(RegisteredDecoders.Decoders);
 
 			if (this._validLicense)
 			{
@@ -335,7 +334,7 @@ namespace OcrDiagnostic
             this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.menuGlyphReader = new System.Windows.Forms.MenuItem();
             this.menuOmniPage = new System.Windows.Forms.MenuItem();
-            this.menuTesseract3 = new System.Windows.Forms.MenuItem();
+            this.menuTesseract5 = new System.Windows.Forms.MenuItem();
             this.Options = new System.Windows.Forms.MenuItem();
             this.AutoRotate = new System.Windows.Forms.MenuItem();
             this.Deskew = new System.Windows.Forms.MenuItem();
@@ -349,7 +348,6 @@ namespace OcrDiagnostic
             this.OcrPane = new System.Windows.Forms.Panel();
             this.statusBar1 = new System.Windows.Forms.StatusBar();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.menuTesseract5 = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -436,7 +434,6 @@ namespace OcrDiagnostic
             this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuGlyphReader,
             this.menuOmniPage,
-            this.menuTesseract3,
             this.menuTesseract5});
             this.menuItem2.Text = "Engine";
             this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
@@ -453,11 +450,11 @@ namespace OcrDiagnostic
             this.menuOmniPage.Text = "OmniPage";
             this.menuOmniPage.Click += new System.EventHandler(this.menuOmniPage_Click);
             // 
-            // menuTesseract3
+            // menuTesseract5
             // 
-            this.menuTesseract3.Index = 2;
-            this.menuTesseract3.Text = "Tesseract 3";
-            this.menuTesseract3.Click += new System.EventHandler(this.menuTesseract3_Click);
+            this.menuTesseract5.Index = 2;
+            this.menuTesseract5.Text = "Tesseract5";
+            this.menuTesseract5.Click += new System.EventHandler(this.menuTesseract5_Click);
             // 
             // Options
             // 
@@ -553,12 +550,6 @@ namespace OcrDiagnostic
             this.progressBar.Size = new System.Drawing.Size(340, 14);
             this.progressBar.TabIndex = 2;
             this.progressBar.Visible = false;
-            // 
-            // menuTesseract5
-            // 
-            this.menuTesseract5.Index = 3;
-            this.menuTesseract5.Text = "Tesseract5";
-            this.menuTesseract5.Click += new System.EventHandler(this.menuTesseract5_Click);
             // 
             // Form1
             // 
@@ -664,7 +655,7 @@ namespace OcrDiagnostic
 			//use this folder as starting point			
 			oif.InitialDirectory = imagesFolder;
             oif.Title = "Select File to OCR";
-            oif.Filter = AtalaDemos.HelperMethods.CreateDialogFilter(true);
+            oif.Filter = HelperMethods.CreateDialogFilter(true);
 
 			if (oif.ShowDialog(this) != DialogResult.OK) 
 			{
@@ -1084,7 +1075,6 @@ namespace OcrDiagnostic
             }
             menuGlyphReader.Checked = (_engine == _glyphReaderEngine);
             menuOmniPage.Checked = (_engine == _omniPageEngine);
-            menuTesseract3.Checked = (_engine == _tesseract3Engine);
             menuTesseract5.Checked = (_engine == _tesseract5Engine);
             
          
@@ -1196,25 +1186,6 @@ namespace OcrDiagnostic
             }
         }
 
-        private void menuTesseract3_Click(object sender, EventArgs e)
-        {
-            if (_tesseract3Engine == null)
-            {
-                try
-                {
-                    _tesseract3Engine = new Tesseract3Engine();
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(this, "Unable to Create Tesseract 3 Engine: " + err.Message);
-                    _tesseract3Engine = null;
-                }
-            }
-            if (_tesseract3Engine != null && _engine != _tesseract3Engine)
-            {
-                SelectEngine(_tesseract3Engine);
-            }
-        }
 
         private void _engine_DocumentProgress(object sender, OcrDocumentProgressEventArgs e)
 		{

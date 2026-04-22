@@ -70,14 +70,6 @@ We recommend the following to ensure you clone with the required submodule
 
 Example: git for windows
 ```bash
-git clone https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_CS_x64.git OcrDiagnosticDemo
-```
-
-## Cloning
-We recommend the following to ensure you clone with the required submodule
-
-Example: git for windows
-```bash
 git clone https://github.com/AtalaSupport/DemoGallery_Desktop_OcrDiagnosticDemo_CS_x64.git OcrDiagnosticDemo --recursive
 cd OcrDiagnosticDemo
 git submodule init

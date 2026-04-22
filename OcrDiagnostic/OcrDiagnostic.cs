@@ -196,7 +196,7 @@ namespace OcrDiagnostic
                 // you will need to ensure when using OmniPageEngine in yhour application that you 
                 // specify the resources directory wher the OmniPageResources live
                 // Please see https://www.atalasoft.com/KB2/KB/50396/INFO-OmniPageEngine-Overview 
-                string omniPageOcrResourcesDirectory = @"C:\Program Files (x86)\Atalasoft\DotImage 11.3\bin\OCRResources\OmniPage";
+                string omniPageOcrResourcesDirectory = @"C:\Program Files (x86)\Atalasoft\DotImage 2026.2\bin\OCRResources\OmniPage";
                 if (!Directory.Exists(omniPageOcrResourcesDirectory))
                 {
                     MessageBox.Show("You need to ensure you ahve downloaded the OmniPageEngine OCR Resources to the OmniPage resource directory\r\nsee https://www.atalasoft.com/KB2/KB/50396/INFO-OmniPageEngine-Overview");
